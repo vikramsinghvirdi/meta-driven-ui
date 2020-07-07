@@ -1,0 +1,4 @@
+<h2>{{pageJSON?.name}}</h2>
+<section *ngFor="let section of sections;">
+  <ndc-dynamic [ndcDynamicComponent]="section?.component" [ndcDynamicInputs]="section?.inputs"></ndc-dynamic>
+</section>

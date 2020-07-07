@@ -1,0 +1,11 @@
+<section [ngClass]="classes" *ngIf="items?.length > 0">
+  <div [ngClass]="items[0].classes" *ngIf="items[0]">
+      <ndc-dynamic [ndcDynamicComponent]="items[0].component" [ndcDynamicInputs]="items[0]?.inputs"></ndc-dynamic>
+  </div>
+  <div [ngClass]="items[1].classes" *ngIf="items[1]">
+      <ndc-dynamic [ndcDynamicComponent]="items[1].component" [ndcDynamicInputs]="items[1]?.inputs"></ndc-dynamic>
+  </div>
+  <div [ngClass]="items[2].classes" *ngIf="items[2]">
+      <ndc-dynamic [ndcDynamicComponent]="items[2].component" [ndcDynamicInputs]="items[2]?.inputs"></ndc-dynamic>
+  </div>
+</section>
