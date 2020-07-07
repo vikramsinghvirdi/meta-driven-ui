@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "git-build": "ng build --prod --base-href https://vikramsinghvirdi.github.io/meta-driven-ui/",
     "deploy": "gh-pages -d dist",
     "test": "ng test",
     "lint": "ng lint",
