@@ -3,7 +3,7 @@
   "name": "Dashboard",
   "description": "Home page description",
   "version": "1.0",
-  "theme": "theme-name",
+  "theme": "theme",
   "enableSidebar": false,
   "vssPermissions": [
     "vss.dashboard.read"

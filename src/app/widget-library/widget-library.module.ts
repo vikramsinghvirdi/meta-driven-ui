@@ -7,7 +7,8 @@ import { ChartsModule } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
 import { RadarChartComponent } from './components/radar-chart/radar-chart.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
-
+import { Injector} from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 @NgModule({
   declarations: [DataGridComponent, PieChartComponent, RadarChartComponent, BarChartComponent],
   imports: [
@@ -15,6 +16,12 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     CommonModule,
     ClarityModule,
     ChartsModule
-  ]
+  ],
+  bootstrap: [PieChartComponent]
 })
-export class WidgetLibraryModule { }
+export class WidgetLibraryModule {
+  constructor(private injector: Injector) {
+    const el = createCustomElement(PieChartComponent, { injector });
+    customElements.define('pie-chart', el);
+  }
+}
