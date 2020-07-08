@@ -3,6 +3,7 @@ import { RenderingEngineService } from '../../services/rendering-engine.service'
 import { DataGridComponent } from 'src/app/widget-library/components/data-grid/data-grid.component';
 import { WidgetLibraryService } from 'src/app/widget-library/services/widget-library.service';
 import { LayoutService } from 'src/app/layout/services/layout.service';
+import { Page } from '../../models/page';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { LayoutService } from 'src/app/layout/services/layout.service';
 })
 export class RenderingEngineComponent implements OnInit {
 
-  public pageJSON: any;
+  public pageJSON: Page;
   public sections: any[] = [];
   public inputs;
   constructor(private renderingEngineService: RenderingEngineService,
@@ -23,8 +24,8 @@ export class RenderingEngineComponent implements OnInit {
     this.renderingEngineService.getPageJSON().subscribe(p => {
       this.pageJSON = p;
       console.log(p);
-      if (p.properties && p.properties.sections) {
-        p.properties.sections.forEach(s => {
+      if (p.sections) {
+        p.sections.forEach(s => {
           const sectionItems = [];
           s.items.forEach(i => {
             sectionItems.push({
